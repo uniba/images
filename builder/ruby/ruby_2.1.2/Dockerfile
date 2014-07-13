@@ -1,7 +1,9 @@
 FROM bradrydzewski/base
 
-WORKDIR /home/ubuntu
-USER ubuntu
+WORKDIR /root
+HOME /root
+LOGNAME root
+USER root
 ADD rbenv.sh /etc/drone.d/
 
 # we already install ruby 2.1.2 in the base image
@@ -16,4 +18,5 @@ RUN export PATH=$PATH:/home/ubuntu/.rbenv/bin                                   
     rbenv global 2.1.2                                                                && \
     rbenv rehash                                                                      && \
     gem install bundler                                                               && \
-    rbenv rehash
+    rbenv rehash                                                                      && \
+    ln -s /home/ubuntu/.rbenv /root

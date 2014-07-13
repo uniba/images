@@ -1,5 +1,5 @@
 # add rbenv to path
-export PATH="/home/ubuntu/.rbenv/bin:$PATH"
+export PATH="/root/.rbenv/bin:$PATH"
 
 # set default env vars
 export RBENV_VERSION=2.1.2
